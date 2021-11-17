@@ -1,4 +1,3 @@
-
 // ---------- open and close quiz when button is clicked ------------ //
 let quizBtn = document.querySelector(".quiz-btn");
 let quiz = document.querySelector(".quiz");
