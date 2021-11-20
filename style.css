@@ -4,7 +4,6 @@ SPACING SYSTEM (px)
 FONT SIZE SYSTEM (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 */
-
 /******************
 General Styles
 *******************/
@@ -27,20 +26,19 @@ body {
 }
 
 /******************
-Quiz Styles
+Nav Styles
 *******************/
-.quiz {
-  display: none;
-  position: relative;
+
+.main-nav {
+  background-color: #368B85;
 }
 
 .ul {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: #368B85;
-  color: #F1E9E5;
   height: 8rem;
+  color: #F1E9E5;
 }
 
 .ul li {
@@ -57,7 +55,7 @@ Quiz Styles
 .quiz-btn {
   font-size: 2rem;
   border: 1px solid #5e5e5e;
-  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
   border-radius: 50rem;
   padding: 1rem 2rem;
   cursor: pointer;
@@ -67,24 +65,13 @@ Quiz Styles
   background-color: #d6d6d6;
 }
 
-.quiz-title {
-  font-size: 3rem;
-}
+/******************
+Quiz Styles
+*******************/
 
-.open-quiz {
-  display: block;
-  height: 50vh;
-  width: 80rem;
-  /* background-color: gray; */
-  border-radius: 3px;
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.2);
-  padding: 4.8rem;
-  overflow-y: scroll;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.quiz {
+  display: none;
+  position: relative;
 }
 
 .exit-icon {
@@ -92,8 +79,27 @@ Quiz Styles
   top: 5rem;
   right: 5rem;
   cursor: pointer;
+  z-index: 999;
 }
 
+.open-quiz {
+  display: block;
+  height: 65vh;
+  width: 80rem;
+  /* background-color: gray; */
+  border-radius: 3px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .2);
+  padding: 4.8rem;
+  overflow-y: scroll;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.quiz-title {
+  font-size: 3rem;
+}
 
 .quiz-flex {
   display: flex;
@@ -115,7 +121,7 @@ Quiz Styles
 
 .quiz-choice {
   font-size: 2rem;
-  border: 1px solid rgba(0,0,0,.2);
+  border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 3px;
   padding: 2.4rem;
   cursor: pointer;
@@ -128,7 +134,7 @@ Quiz Styles
 
 .quiz-choice:active {
   color: #fff;
-  background-color: rgba(0,0,0,.4);
+  background-color: rgba(0, 0, 0, .4);
 }
 
 .quiz-choice--active {
@@ -137,4 +143,95 @@ Quiz Styles
 
 .quiz-choice .input {
   display: none;
+}
+
+.submitBtn {
+  font-size: 2rem;
+  background-color: #4a9791;
+  color: #fff;
+  border: 1px solid #5e5e5e;
+  border-radius: 3px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: #368b85;
+}
+
+.result-error {
+  font-size: 1.8rem;
+  color: #FF2626;
+  margin-bottom: 1.2rem
+}
+
+/******************
+Result-Page Styles
+*******************/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 60vh;
+  gap: 2rem;
+}
+
+.table {
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 6.4rem;
+}
+
+thead th {
+  background-color: #4a9791;
+  color: #fff;
+  letter-spacing: 2px;
+  /* text-transform: uppercase; */
+}
+
+tbody td {
+  background-color: #F1E9E5;
+}
+
+td, th {
+  padding: 2rem 2rem;
+  font-size: 2rem;
+}
+
+.text-ctn {
+  text-align: center;
+}
+
+.result-txt {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 3.2rem;
+}
+
+.result-percentage {
+  font-size: 5.2rem;
+}
+
+.homeBtn-ctn {
+  text-align: center;
+}
+
+.homeBtn {
+  font-size: 2rem;
+  color: #000;
+  background-color: #F1E9E5;
+  text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+  padding: 1rem 2rem;
+  border: 2px solid #4a9791;
+}
+
+.homeBtn:hover {
+    background-color: #5e5e5e;
+    color: #F1E9E5;
+    border-color: #F1E9E5;
 }
