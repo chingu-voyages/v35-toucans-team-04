@@ -7,6 +7,7 @@ let containers = document.querySelectorAll(".quiz-choices");
 //convert nodeList to an array
 let arrayOfChoicesCtn = Array.prototype.slice.call(containers);
 
+
 //store scores here to be used when "get result button" is clicked
 let addArray = [];
 
