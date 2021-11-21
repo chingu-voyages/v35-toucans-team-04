@@ -72,21 +72,22 @@ function stopEnter() {
   } else {
     /*if not all have answer, add submit event to prevent from
     entering the result page*/
-    form.addEventListener("submit", function(e) {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
     });
+    let errorMessage = "*Cannot be submitted unless all questions have been answered.";
     //inform the user
-    error.innerHTML = "*All questions are required.";
+    error.innerHTML = `${errorMessage}`;
   };
 };
 
 //as window redirect
-window.onload = function() {
+window.onload = () => {
   //get the stored score
   let storedInput = localStorage.getItem("scoreInput");
   //show in text
   if (result && storedInput) {
-    result.textContent = storedInput + "%";
+    result.textContent = `${storedInput}%`;
   };
   //clear local storage after loading
   localStorage.clear();
@@ -102,14 +103,14 @@ let icon = document.querySelector(".exit-icon");
 
 //add click event to quiz button if not null
 if (quizBtn) {
-  quizBtn.addEventListener("click", function() {
+  quizBtn.addEventListener("click", () => {
     //open quiz window
     quiz.classList.add("open-quiz");
   });
 };
 //add click event to exit icon if not null
 if (icon) {
-  icon.addEventListener("click", function() {
+  icon.addEventListener("click", () => {
     //remove quiz window
     quiz.classList.remove("open-quiz");
     //empty array of scores/choices
