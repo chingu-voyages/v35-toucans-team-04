@@ -1,12 +1,25 @@
+#body {
+  text-align: center;
+}
 /* Cards */
 body .row {
   margin: 2rem 0;
 }
-.card-title {
+.card-body {
+  text-align: left;
+}
+/* Modal */
+.modal {
+  text-align: left;
+}
+.btn-group-toggle {
   text-align: center;
 }
-
+.interval {
+  width: 60px;
+  margin: 0 3px;
+}
 /* Footer */
-#footer {
-  text-align: center;
+svg {
+  width: 30px;
 }
