@@ -1,6 +1,9 @@
 #body {
   text-align: center;
 }
+.far {
+  padding: 0 10px;
+}
 /* Cards */
 body .row {
   margin: 2rem 0;
@@ -8,7 +11,22 @@ body .row {
 .card-body {
   text-align: left;
 }
+.btn-block {
+  margin-top: 1.25rem;
+}
+.item-data {
+  display: none;
+}
+.fa-trash-alt {
+  color: crimson;
+}
 /* Modal */
+input.highlight {
+  border: red 1px solid;
+}
+.required-msg {
+  color: red;
+}
 .modal {
   text-align: left;
 }

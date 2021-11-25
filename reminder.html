@@ -21,6 +21,7 @@
     </nav>
     <main>
       <!-- Cards -->
+      <!-- Active item listed as list-group-item, add deletion line to checked item -->
       <div class="container-fluid row">
         <div class="col-lg-6">
           <div class="card">
@@ -28,11 +29,33 @@
               <h2 class="card-title">Dailies</h2>
             </div>
             <div class="card-body">
+              <ul
+                class="
+                  list-group list-group-horizontal
+                  container-fluid
+                  row
+                  daily-list
+                "
+              >
+                <!-- li test
+                <li href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex justify-content-between">
+                    <h5>
+                      <a class="far fa-square"></a>
+                      Title
+                    </h5>
+                    <span>
+                      Time
+                      <a class="far fa-trash-alt"></a>
+                    </span>
+                  </div>
+                </li> -->
+              </ul>
               <button
                 type="button"
-                class="btn btn-info btn-block new-reminder"
+                class="btn btn-info btn-block"
                 data-toggle="modal"
-                data-target="#edit-daily"
+                data-target="#new-daily"
               >
                 <i class="fas fa-plus"></i>
               </button>
@@ -45,11 +68,19 @@
               <h2 class="card-title">To Do's</h2>
             </div>
             <div class="card-body">
+              <ul
+                class="
+                  list-group list-group-horizontal
+                  container-fluid
+                  row
+                  todo-list
+                "
+              >
               <button
                 type="button"
-                class="btn btn-info btn-block new-reminder"
+                class="btn btn-info btn-block"
                 data-toggle="modal"
-                data-target="#edit-todo"
+                data-target="#new-todo"
               >
                 <i class="fas fa-plus"></i>
               </button>
@@ -60,7 +91,7 @@
       <!-- Modal daily -->
       <div
         class="modal fade"
-        id="edit-daily"
+        id="new-daily"
         tabindex="-1"
         aria-labelledby="daily-label"
         aria-hidden="true"
@@ -69,7 +100,7 @@
           <div class="modal-content">
             <!-- Modal header -->
             <div class="modal-header">
-              <h5 class="modal-title" id="daily-label">Edit Daily</h5>
+              <h5 class="modal-title" id="daily-label">New Daily</h5>
               <div>
                 <button
                   type="button"
@@ -78,25 +109,32 @@
                 >
                   Cancel
                 </button>
-                <button type="button" class="btn btn-info">Save</button>
+                <input
+                  value="Save"
+                  type="submit"
+                  class="btn btn-info new-daily"
+                  data-dismiss="modal"
+                />
               </div>
             </div>
             <!-- Modal body -->
             <div class="modal-body">
               <div class="container-fluid">
                 <!-- form -->
-                <form>
+                <form id="new-daily-form">
                   <!-- Title -->
                   <div class="form-group">
-                    <div>
+                    <div class="d-flex justify-content-between">
                       <label>Title*</label>
+                      <span class="required-msg"></span>
                     </div>
                     <input
                       type="text"
                       required="required"
                       spellcheck="true"
                       placeholder="Add a title"
-                      class="form-control"
+                      class="form-control required"
+                      name="title"
                     />
                   </div>
                   <!-- Notes -->
@@ -105,58 +143,74 @@
                     <textarea
                       placeholder="Add notes"
                       class="form-control"
+                      name="notes"
                     ></textarea>
+                  </div>
+                  <!-- Remind time -->
+                  <div class="form-group">
+                    <div class="d-flex justify-content-between">
+                      <label>Remind time*</label>
+                      <span class="required-msg"></span>
+                    </div>
+                    <input
+                      type="time"
+                      required="required"
+                      class="form-control required"
+                      name="time"
+                    />
+                  </div>
+                  <!-- Remind interval -->
+                  <div class="form-group">
+                    <label>
+                      Remind me at the interval of
+                      <input
+                        type="number"
+                        min="0"
+                        class="interval"
+                        name="interval"
+                      />
+                      minutes if the task was not checked by remind time
+                    </label>
                   </div>
                   <!-- Start date -->
                   <div class="form-group">
                     <label>Start Date</label>
-                    <input type="date" class="form-control" />
+                    <input type="date" class="form-control" name="date" />
                   </div>
-                  <!-- Repeat On -->
+                  <!-- Repeat -->
+                  <!-- Item should be collapsed on inactive day -->
                   <div class="form-group">
                     <label>Repeat On</label>
                     <div class="btn-group-toggle" data-toggle="buttons">
                       <label class="btn btn-info btn-toggle">
-                        <input type="checkbox" checked />
+                        <input type="checkbox" checked name="su" />
                         Su
                       </label>
                       <label class="btn btn-info btn-toggle">
-                        <input type="checkbox" checked />
+                        <input type="checkbox" checked name="mo" />
                         Mo
                       </label>
                       <label class="btn btn-info btn-toggle">
-                        <input type="checkbox" checked />
+                        <input type="checkbox" checked name="tu" />
                         Tu
                       </label>
                       <label class="btn btn-info btn-toggle">
-                        <input type="checkbox" checked />
+                        <input type="checkbox" checked name="we" />
                         We
                       </label>
                       <label class="btn btn-info btn-toggle">
-                        <input type="checkbox" checked />
+                        <input type="checkbox" checked name="th" />
                         Th
                       </label>
                       <label class="btn btn-info btn-toggle">
-                        <input type="checkbox" checked />
+                        <input type="checkbox" checked name="fr" />
                         Fr
                       </label>
                       <label class="btn btn-info btn-toggle">
-                        <input type="checkbox" checked />
+                        <input type="checkbox" checked name="sa" />
                         Sa
                       </label>
                     </div>
-                  </div>
-                  <!-- Remind time -->
-                  <div class="form-group">
-                    <label>Remind time of the selected day(s)</label>
-                    <input type="time" class="form-control" />
-                  </div>
-                  <div class="form-group">
-                    <label>
-                      Remind me at the interval of
-                      <input type="number" min="0" class="interval" />
-                      minutes if the task was not checked by remind time
-                    </label>
                   </div>
                 </form>
               </div>
@@ -167,7 +221,7 @@
       <!-- Modal todo -->
       <div
         class="modal fade"
-        id="edit-todo"
+        id="new-todo"
         tabindex="-1"
         aria-labelledby="todo-label"
         aria-hidden="true"
@@ -176,7 +230,7 @@
           <div class="modal-content">
             <!-- Modal header -->
             <div class="modal-header">
-              <h5 class="modal-title" id="todo-label">Edit To Do</h5>
+              <h5 class="modal-title" id="todo-label">New To Do</h5>
               <div>
                 <button
                   type="button"
@@ -185,25 +239,32 @@
                 >
                   Cancel
                 </button>
-                <button type="button" class="btn btn-info">Save</button>
+                <input
+                  value="Save"
+                  type="submit"
+                  class="btn btn-info new-todo"
+                  data-dismiss="modal"
+                />
               </div>
             </div>
             <!-- Modal body -->
             <div class="modal-body">
               <div class="container-fluid">
                 <!-- form -->
-                <form>
+                <form id="new-todo-form">
                   <!-- Title -->
                   <div class="form-group">
-                    <div>
+                    <div class="d-flex justify-content-between">
                       <label>Title*</label>
+                      <span class="required-msg"></span>
                     </div>
                     <input
                       type="text"
                       required="required"
                       spellcheck="true"
                       placeholder="Add a title"
-                      class="form-control"
+                      class="form-control required"
+                      name="title"
                     />
                   </div>
                   <!-- Notes -->
@@ -212,22 +273,36 @@
                     <textarea
                       placeholder="Add notes"
                       class="form-control"
+                      name="notes"
                     ></textarea>
                   </div>
                   <!-- Start date -->
                   <div class="form-group">
                     <label>Due Date</label>
-                    <input type="date" class="form-control" />
+                    <input type="date" class="form-control" name="date" />
                   </div>
                   <!-- Remind time -->
                   <div class="form-group">
-                    <label>Remind time of the selected day(s)</label>
-                    <input type="time" class="form-control" />
+                    <div class="d-flex justify-content-between">
+                      <label>Remind time*</label>
+                      <span class="required-msg"></span>
+                    </div>
+                    <input
+                      type="time"
+                      required="required"
+                      class="form-control required"
+                      name="time"
+                    />
                   </div>
                   <div class="form-group">
                     <label>
                       Remind me at the interval of
-                      <input type="number" min="0" class="interval" />
+                      <input
+                        type="number"
+                        min="0"
+                        class="interval"
+                        name="interval"
+                      />
                       minutes if the task was not checked by remind time
                     </label>
                   </div>
