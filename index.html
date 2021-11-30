@@ -3,6 +3,14 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- google font Raleway -font weight: 400, 500, 600 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- font awesome for exit icon -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
   <link rel="stylesheet" href="style.css">
@@ -10,20 +18,30 @@
 </head>
 
 <body>
-  <nav class="main-nav">
-    <ul class="ul">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><button class="quiz-btn">Take the quiz</button></li>
-    </ul>
-  </nav>
+  <header class="header">
+    <nav class="main-nav">
+      <ul class="ul">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Reminder</a></li>
+        <li><button class="quiz-btn">Take the quiz</button></li>
+      </ul>
+    </nav>
+    <div class="main-header">
+
+    </div>
+  </header>
 
   <main>
     <section class="quiz">
-      <i class="exit-icon fas fa-times fa-2x"></i>
+      <div class="icon-ctn">
+        <i class="exit-icon fas fa-times fa-2x"></i>
+      </div>
       <div class="quiz-flex">
-        <h2 class="quiz-title">Do you have depression?</h2>
+        <div class="quiz-title-ctn">
+          <h2 class="quiz-title">Do you have depression?</h2>
+        </div>
         <div class="quiz-ctn">
           <h3 class="quiz-question">1. I feel little interest or pleasure in doing things.</h3>
           <div class="quiz-choices">
@@ -241,4 +259,5 @@
   </main>
   <script src="script.js" charset="utf-8"></script>
 </body>
+
 </html>
