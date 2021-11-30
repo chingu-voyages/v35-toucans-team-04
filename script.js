@@ -99,7 +99,7 @@ window.onload = () => {
 /*****************************************************************/
 let quizBtn = document.querySelector(".quiz-btn");
 let quiz = document.querySelector(".quiz");
-let icon = document.querySelector(".exit-icon");
+let icon = document.querySelector(".icon-ctn");
 
 //add click event to quiz button if not null
 if (quizBtn) {
