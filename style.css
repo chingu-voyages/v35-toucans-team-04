@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* color-primary-lightest: #feefed; */
 /* color-primary-light: #F55C47; */
 /* color-primary-medium: #dd5340; */
@@ -549,3 +550,48 @@ td, th {
   background-color: #7b2e24;
   color: #fff;
 }
+=======
+#body {
+  text-align: center;
+}
+.far {
+  padding: 0 10px;
+}
+/* Cards */
+body .row {
+  margin: 2rem 0;
+}
+.card-body {
+  text-align: left;
+}
+.btn-block {
+  margin-top: 1.25rem;
+}
+.item-data {
+  display: none;
+}
+.fa-trash-alt {
+  color: crimson;
+}
+/* Modal */
+input.highlight {
+  border: red 1px solid;
+}
+.required-msg {
+  color: red;
+}
+.modal {
+  text-align: left;
+}
+.btn-group-toggle {
+  text-align: center;
+}
+.interval {
+  width: 60px;
+  margin: 0 3px;
+}
+/* Footer */
+svg {
+  width: 30px;
+}
+>>>>>>> feature/reminder
