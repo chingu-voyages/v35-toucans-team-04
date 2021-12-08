@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 /* color-primary-lightest: #feefed; */
 /* color-primary-light: #F55C47; */
 /* color-primary-medium: #dd5340; */
@@ -57,6 +58,10 @@ Reusable Container Styles
 
 .grid-2-columns {
   grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-4-columns {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 /******************
@@ -194,7 +199,7 @@ Main Header Styles
   z-index: 0;
 }
 
-.img--toucan {
+.img--toucan, .about-img {
   height: 37rem;
 }
 
@@ -269,7 +274,8 @@ Main Header Styles
 /******************
 Quiz Styles
 *******************/
-.section__quiz {
+.section__quiz, .about-us {
+  position: relative;
   padding: 12.8rem 0 9.6rem;
 }
 
@@ -481,7 +487,6 @@ Quiz Styles
 /******************
 Result-Page Styles
 *******************/
-
 .flex-ctn {
   display: flex;
   flex-direction: column;
@@ -499,8 +504,8 @@ Result-Page Styles
 }
 
 .table td, .table th {
-    padding: 2rem;
-  }
+  padding: 2rem;
+}
 
 thead th {
   background-color: #F55C47;
@@ -508,7 +513,6 @@ thead th {
   letter-spacing: 2px;
   /* text-transform: uppercase; */
 }
-
 
 tbody td {
   background-color: #F1E9E5;
@@ -537,47 +541,58 @@ td, th {
   color: #dd5340;
 }
 
-
-=======
+/******************
+Reminder Styles
+*******************/
 .far {
   padding: 0 10px;
 }
+
 /* Cards */
 body .row {
   margin: 2rem 0;
 }
+
 .card-body {
   text-align: left;
 }
+
 .btn-block {
   margin-top: 1.25rem;
 }
+
 .item-data {
   display: none;
 }
+
 .fa-trash-alt {
   color: crimson;
 }
+
 /* Modal */
 input.highlight {
   border: red 1px solid;
 }
+
 .required-msg {
   color: red;
 }
+
 .modal {
   text-align: left;
 }
+
 .btn-group-toggle {
   text-align: center;
 }
+
 .interval {
   width: 60px;
   margin: 0 3px;
 }
 
 .navbar-color {
-    background-color: #F55C47;
+  background-color: #F55C47;
 }
 
 .nav-text {
@@ -587,7 +602,7 @@ input.highlight {
 }
 
 .nav-text:hover {
-    color: #7b2e24;
+  color: #7b2e24;
 }
 
 .pt-5 {
@@ -604,14 +619,145 @@ input.highlight {
   color: #fff !important;
 }
 
-/* Footer */
+/******************
+Blog Styles
+*******************/
+figure {
+  border: thin #c0c0c0 solid;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: 220px;
+  margin: auto;
+}
+
+.blog-img {
+  max-width: 220px;
+  max-height: 150px;
+}
+
+figcaption {
+  background-color: #7b2e24;
+  color: #fff;
+  padding: .3rem;
+  text-align: center;
+}
+
+.blog-container {
+  display: flex;
+  align-items: center;
+}
+
+.containers {
+  background-color: #feefed;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+article p {
+  font-size: 1.2rem;
+}
+
+.input-btn {
+  font-size: 1.4rem;
+  background-color: #dd5340;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+  padding: .5rem .5rem;
+  cursor: pointer;
+}
+
+/******************
+About us Styles
+*******************/
+
+.about-us {
+  position: relative;
+  margin: 9.6rem 0 6.4rem;
+}
+
+.about-gap {
+  grid-column-gap: 2.4rem;
+  grid-row-gap: 12.8rem;
+}
+
+.about-text-ctn {
+  border: 3px solid #dd5340;
+  color: #dd5340;
+  padding: 2rem;
+  border-radius: 30rem;
+}
+
+.about-us__p {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.about-us__h2 {
+  font-size: 4.4rem;
+}
+
+.about-img-ctn {
+position: relative;
+justify-self: center;
+background-color: #feefed;
+border-radius: 70% 51% 30% 70% / 41% 65% 55% 79%;
+height: 30rem;
+width: 30rem;
+}
+
+.about-img {
+  position: absolute;
+  top: -10rem;
+  right: -12rem;
+}
+
+.about-center {
+  text-align: center;
+}
+
+.team-ctn {
+  grid-column: 1/-1;
+  justify-content: center;
+}
+
+.team {
+  background-color: #F55C47;
+  border-radius: 42% 57% 62% 87% / 93% 65% 70% 71%;
+  padding: 4rem 3.2rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
+.team:hover {
+  transform: translateY(-1rem);
+}
+
+.team-names {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/******************
+Footer Styles
+*******************/
 .footer {
   height: 3rem;
   padding: 10rem 0;
-text-align: center;
+  text-align: center;
 }
 
 svg {
   width: 30px;
 }
->>>>>>> feature/reminder
+
+>>>>>>>feature/reminder
