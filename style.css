@@ -39,6 +39,10 @@ body {
 /******************
 Reusable Container Styles
 *******************/
+.page-container {
+  position: relative;
+}
+
 .container {
   max-width: 120rem;
   padding: 3.2rem;
@@ -488,10 +492,15 @@ Result-Page Styles
 }
 
 .table {
+  width: 60%;
   border-collapse: collapse;
   text-align: center;
   margin-bottom: 6.4rem;
 }
+
+.table td, .table th {
+    padding: 2rem;
+  }
 
 thead th {
   background-color: #F55C47;
@@ -500,12 +509,12 @@ thead th {
   /* text-transform: uppercase; */
 }
 
+
 tbody td {
   background-color: #F1E9E5;
 }
 
 td, th {
-  padding: 2rem 2rem;
   font-size: 2rem;
 }
 
@@ -528,32 +537,8 @@ td, th {
   color: #dd5340;
 }
 
-.homeBtn-ctn {
-  text-align: center;
-}
 
-.homeBtn,
-.homeBtn:link,
-.homeBtn:visited {
-  font-size: 2rem;
-  background-color: #dd5340;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  border-radius: 50rem;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
-  padding: 1.2rem 2rem;
-  cursor: pointer;
-}
-
-.homeBtn:hover {
-  background-color: #7b2e24;
-  color: #fff;
-}
 =======
-#body {
-  text-align: center;
-}
 .far {
   padding: 0 10px;
 }
@@ -590,7 +575,42 @@ input.highlight {
   width: 60px;
   margin: 0 3px;
 }
+
+.navbar-color {
+    background-color: #F55C47;
+}
+
+.nav-text {
+  color: #fff;
+  font-size: 2.4rem;
+  margin-right: 2rem;
+}
+
+.nav-text:hover {
+    color: #7b2e24;
+}
+
+.pt-5 {
+  padding-top: 100rem !important;
+}
+
+.card-header-color {
+  background-color: #feefed !important;
+  color: #7b2e24 !important;
+}
+
+.btn-color {
+  background-color: #F55C47 !important;
+  color: #fff !important;
+}
+
 /* Footer */
+.footer {
+  height: 3rem;
+  padding: 10rem 0;
+text-align: center;
+}
+
 svg {
   width: 30px;
 }
