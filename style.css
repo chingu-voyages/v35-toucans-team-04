@@ -73,6 +73,28 @@ Nav Styles
   margin-bottom: 9.6rem;
 }
 
+.logo {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.header .logo {
+  padding: 3.2rem;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.fist {
+  color: #feefed;
+}
+
+.logo-2 {
+  display: none;
+}
+
 .nav-blob {
   position: absolute;
   top: 0;
@@ -157,7 +179,7 @@ Nav Styles
 Main Header Styles
 *******************/
 .main-header {
-  padding: 30rem 0 9.6rem 0;
+  padding: 20rem 0 9.6rem 0;
 }
 
 .img-ctn {
@@ -772,6 +794,28 @@ svg {
 /******************
 Media Queries
 *******************/
+@media (max-width: 67em) {
+  .logo {
+    font-size: 2rem;
+  }
+
+  .main-header {
+    padding: 15rem 0 9.6rem 0;
+  }
+
+  .blog-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .navbar .navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: row;
+  }
+}
+
 @media (max-width: 62.5em) {
   .text__h1 {
     font-size: 3.2rem;
@@ -824,6 +868,66 @@ Media Queries
   .icon-ctn {
     top: 2rem;
     right: 3rem;
+  }
+
+  .logo-2 {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .logo-2 a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .logo-2 i {
+    color: #feefed;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .media-nav {
+    padding: 3rem;
+    display: block;
+  }
+
+  .ul-2 {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .ul-2 li {
+    display: inline-block;
+  }
+
+  .ul-2 a {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .ul-2 a:hover {
+    border-bottom: 2px solid #fff;
+  }
+
+  .nav-blob {
+    display: none;
+  }
+
+  .nav-blobline {
+    display: none;
   }
 }
 
@@ -909,55 +1013,12 @@ Media Queries
   .grid {
     grid-column-gap: 3.2rem;
   }
+
 }
 
 @media (max-width: 47em) {
   .main-header {
     padding: 15rem 0 9.6rem 0;
-  }
-
-  .burger {
-    display: block;
-  }
-
-  .main-nav {
-    display: none;
-  }
-
-  .media-nav {
-    padding: 3rem;
-    display: block;
-  }
-
-  .ul-2 {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.2rem;
-  }
-
-  .ul-2 li {
-    display: inline-block;
-  }
-
-  .ul-2 a {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .ul-2 a:hover {
-    border-bottom: 2px solid #fff;
-  }
-
-  .nav-blob {
-    display: none;
-  }
-
-  .nav-blobline {
-    display: none;
   }
 
   .text-blob--2 {
