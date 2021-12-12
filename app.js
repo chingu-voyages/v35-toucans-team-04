@@ -1,121 +1,186 @@
-// check for premission after setting reminder
-// Notification.requestPermission().then(function (status) {
-//   if (status != "granted") {
-//     alert("Please allow notification of the site.");
-//   }
-// });
+// ===============================
+// =======Browser functions=======
 
-// Toggle effects of week buttons
-$(".btn-toggle").mouseup(function () {
-  $(this).removeClass("btn-info").addClass("btn-outline-info");
+// Check localStorage support
+if (!localStorage) {
+  alert(
+    "localStorage not supported under certain browser or incognito mode, please check your browser"
+  );
+}
+
+// ============================
+// =======Form functions=======
+
+// Get value from given form
+function getInput(name, inputs) {
+  for (let index = 0; index < inputs.length; index++) {
+    if (inputs[index].name == name) {
+      return inputs[index].value;
+    }
+  }
+}
+
+// Remove verification highlight and message
+function removeMsg(elementName) {
+  $("." + elementName + "-input").removeClass("highlight");
+  $("." + elementName + "-msg").each(function () {
+    this.innerHTML = "";
+  });
+}
+
+$(".add-btn").click(function () {
+  // Reset form on adding item
+  $("#daily-form")[0].reset();
+  // Remove verification highlight and message if existed
+  removeMsg("time");
+  removeMsg("title");
 });
 
-// Form functions
+// Verify and reset the form on save
+$(".save-btn").click(function () {
+  // Convert the form data to JSON object
+  let inputs = $(".form-control");
+
+  // Verify form
+  if (!verifyDaily($(this), inputs)) {
+    return;
+  }
+  newDaily(inputs);
+});
 
 // Form verification
-function verifyForm(thisObj, formArr) {
-  // Hightlight the border and prevent the modal from being closed when required fields are not completed
-  if (getTitle(formArr).value || getTime(formArr).value) {
-    $(".required").removeClass("highlight");
-    $(".required-msg").each(function () {
-      this.innerHTML = "";
-    });
-    thisObj.attr("data-dismiss", "modal");
+function verifyDaily(saveBtn, inputs) {
+  let title = getInput("title", inputs);
+  let time = getInput("time", inputs);
+  // Allow the modal to close when both required fields are not null
+  if (title) {
+    saveBtn.attr("data-dismiss", "modal");
     return true;
+  }
+
+  if (title) {
+    removeMsg("title");
   } else {
-    thisObj.removeAttr("data-dismiss");
-    $(".required").addClass("highlight");
-    $(".required-msg").each(function () {
-      this.innerHTML = "Please fill in the * fields";
+    $(".title-input").addClass("highlight");
+    $(".title-msg").each(function () {
+      this.innerHTML = "Please enter a title";
     });
-    return false;
+  }
+
+  if (time) {
+    removeMsg("time");
+  } else {
+    $(".time-input").addClass("highlight");
+    $(".time-msg").each(function () {
+      this.innerHTML = "Please enter a time";
+    });
+  }
+  // Prevent the modal from being closed when any required field is null
+  saveBtn.removeAttr("data-dismiss");
+  return false;
+}
+
+// ============================
+// =======Page functions=======
+
+let storage = localStorage;
+// Get last saved date, if null, assign as current date
+let today = new Date().toLocaleDateString();
+let savedDate = storage.getItem(0);
+if (!savedDate) {
+  storage.setItem(0, today);
+  savedDate = storage.getItem(0);
+}
+
+// Insert DOM and bind icon functions if there is data in storage
+for (let index = 1; index < storage.length; index++) {
+  let data = storage.getItem(index);
+  $(".add-btn").before(data);
+  let delBtn = $(".item-del-btn")[index - 1];
+  $(delBtn).click(() => {
+    deleteItem($(delBtn), index - 1);
+  });
+  let itemMain = $(".item-main")[index - 1];
+  $(itemMain).click(() => {
+    checkItem($(itemMain), index - 1);
+  });
+}
+
+// Reset checklist for a new day
+if (today != savedDate) {
+  // Remove checked class on the page
+  $(".checked").removeClass("checked");
+  // Remove checked in stored string
+  for (let index = 0; index < storage.length; index++) {
+    storage[index] = storage[index].replace(" checked", "");
+  }
+  storage.setItem(0, today);
+}
+
+// Delete certain item and remove its data in local storage
+function deleteItem(delBtn, key) {
+  let confirmed = confirm("Are you sure to delete this item?");
+  if (confirmed) {
+    // Remove item on page
+    delBtn.parents(".reminder-item").remove();
+    // Remove data
+    if (storage.length > 2) {
+      for (let index = key + 1; index < storage.length; index++) {
+        storage.setItem(index, storage.getItem(index + 1));
+      }
+      storage.removeItem(storage.length - 1);
+    } else {
+      storage.clear();
+      storage.setItem(0, today);
+    }
   }
 }
 
-// Look for this button's parent with class "modal-content", find "form" element in all childrens, get the "id" attribute of this form
-function getFormID(thisObj) {
-  return "#" + thisObj.parents(".modal-content").find("form")[0].id;
-}
-// Get title object from given form array
-function getTitle(formArr) {
-  return formArr.filter(function (e) {
-    return e.name === "title";
-  })[0];
-}
-// Get time object from given form array
-function getTime(formArr) {
-  return formArr.filter(function (e) {
-    return e.name === "time";
-  })[0];
-}
-// Get date object from given form array
-function getDate(formArr) {
-  return formArr.filter(function (e) {
-    return e.name === "date";
-  })[0];
+// Change css of checked item, replace the saved in local storage item with checked one
+function checkItem(itemMain, key) {
+  itemMain.toggleClass("checked");
+  storage.setItem(key + 1, itemMain.parents(".reminder-item")[0].outerHTML);
 }
 
-// Insert daily item into daily list
-function newDailyItem(formArr) {
-  var title = getTitle(formArr);
-  var time = getTime(formArr);
-  $(".daily-list")
-    // Append item into list, displaying title and time
-    .append(
-      "<li href='#' class='list-group-item list-group-item-action'><div class='d-flex justify-content-between'><h5><a class='far fa-square'></a>" +
-        title.value +
-        "</h5><span>" +
-        time.value +
-        "<a class='far fa-trash-alt'></a></span></div></li>"
-    )
-    // Temporary data storage, will be repalced with storing to browser
-    .append("<p class='item-data'>" + JSON.stringify(formArr) + "</p>");
-}
-
-// Bind functions to plus button
-$(".new-daily").click(function () {
-  formID = getFormID($(this));
-  // Convert the form data to JSON object
-  formArr = $(formID).serializeArray();
-  // Verify form, close modal, clear form and add item if verified
-  if (verifyForm($(this), formArr)) {
-    newDailyItem(formArr);
-    // Reset form content
-    $(formID)[0].reset();
+// Insert daily item, save to localStorage
+function newDaily(inputs) {
+  let title = getInput("title", inputs);
+  let time = getInput("time", inputs);
+  let notes = getInput("notes", inputs);
+  // Insert item before the add button
+  let DOM =
+    "<div class='reminder-item'>" +
+    "<div class='row'>" +
+    "<div class='col-lg-11 col-md-11 col-sm-11 row item-main'>" +
+    "<h4 class='col-lg-11 col-md-11 col-sm-11 item-title'>" +
+    title +
+    "</h4><span class='col-lg-1 col-md-1 col-sm-1 item-time'>" +
+    time +
+    "</span></div><div class='col-lg-1 col-md-1 col-sm-1'>" +
+    "<button type='button' class='item-del-btn'>" +
+    "<i class='far fa-trash-alt'></i></button></div></div>";
+  if (notes == "") {
+    $(".add-btn").before((DOM += "</div>"));
+  } else {
+    $(".add-btn").before(
+      (DOM += "<div class='item-notes'><span>" + notes + "</span></div></div>")
+    );
   }
-});
 
-$(".edit-daily").click(function () {
-  //Read item into form
-  // Convert string to JSON object
-  var obj = $.parseJSON(formData);
-});
+  // Save the item DOM just inserted in string
+  let key = storage.length;
+  let savedDOM = $(".add-btn").prev()[0];
+  storage.setItem(key, savedDOM.outerHTML);
 
-// Insert todo item into todo list
-function newTodoItem(formArr) {
-  var title = getTitle(formArr);
-  var date = getDate(formArr);
-  $(".todo-list")
-    // Append item into list, displaying title and time
-    .append(
-      "<li href='#' class='list-group-item list-group-item-action'><div class='d-flex justify-content-between'><h5><a class='far fa-square'></a>" +
-        title.value +
-        "</h5><span>" +
-        date.value +
-        "<a class='far fa-trash-alt'></a></span></div></li>"
-    )
-    // Temporary data storage, will be repalced with storing to browser
-    .append("<p class='item-data'>" + JSON.stringify(formArr) + "</p>");
+  // Bind delete function with trash can icon
+  let delBtn = $(savedDOM).find(".item-del-btn")[0];
+  $(delBtn).click(() => {
+    deleteItem($(delBtn), key);
+  });
+
+  // Check the item on clicking on main content
+  let itemMain = $(savedDOM).find(".item-main")[0];
+  $(itemMain).click(() => {
+    checkItem($(itemMain), key);
+  });
 }
-
-$(".new-todo").click(function () {
-  formID = getFormID($(this));
-  // Convert the form data to JSON object
-  formArr = $(formID).serializeArray();
-  // Verify form, close modal, clear form and add item if verified
-  if (verifyForm($(this), formArr)) {
-    newTodoItem(formArr);
-    // Reset form content
-    $(formID)[0].reset();
-  }
-});

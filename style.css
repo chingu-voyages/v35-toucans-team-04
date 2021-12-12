@@ -1,43 +1,232 @@
+/* color-primary-lightest: #feefed; */
+/* color-primary-light: #F55C47; */
+/* color-primary-medium: #dd5340; */
+/* color-primary-dark: #7b2e24; */
+/* color-primary-darker: #491c15; */
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+/******************
+General Styles
+*******************/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #212121;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  line-height: 1;
+}
+
+/******************
+Nav Styles
+*******************/
+.header {
+  background-color: #f55c47;
+}
+
+.ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 8rem;
+}
+
+.ul li {
+  list-style: none;
+  margin-right: 3rem;
+}
+
+.ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2em;
+  transition: all 0.3s;
+}
+
+.ul a:hover {
+  color: #491c15;
+  border-bottom: 2px solid;
+}
+
+.quiz-btn {
+  font-size: 2rem;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  border-radius: 50rem;
+  color: #dd5340;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quiz-btn:hover {
+  background-color: #7b2e24;
+  color: #fff;
+}
+
 #body {
   text-align: center;
 }
 .far {
   padding: 0 10px;
 }
-/* Cards */
-body .row {
-  margin: 2rem 0;
+
+/******************
+Reminder Styles
+*******************/
+main .reminder {
+  margin: 2.5%;
 }
-.card-body {
+
+.reminder-box {
+  border: 1px solid #feefed;
+  border-radius: 5px;
+  color: #7b2e24;
+}
+
+.reminder-header {
+  background-color: #feefed;
+  padding: 1.5rem;
+  font-size: 3rem;
+}
+
+div.reminder-body {
+  border: none;
+  color: #7b2e24;
+  font-size: 1.5rem;
   text-align: left;
+  padding: 0 3rem;
+  margin: 1rem;
 }
+
+.reminder-item {
+  padding: 1.5rem 1rem 1rem 1rem;
+  border-bottom: #feefed 3px dashed;
+}
+
+.item-main:hover {
+  color: #f55c47;
+  cursor: hand;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+.item-title {
+  font-size: 1.75rem;
+}
+
+.item-time {
+  padding: 0.1rem;
+}
+
+.item-notes {
+  color: #dd5340;
+  padding-left: 25px;
+}
+
+div.btn-cell {
+  padding-left: 6%;
+  text-align: right;
+}
+
+.item-del-btn {
+  border: none;
+  background-color: transparent;
+  color: #feefed;
+  padding: 0.5rem 0;
+  margin-left: 75%;
+}
+
+.item-del-btn:hover {
+  color: #f55c47;
+}
+
+div .add-btn {
+  background-color: #feefed;
+  border-radius: 5px;
+  color: #f55c47;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+div .add-btn:hover {
+  background-color: #f55c47;
+  color: #feefed;
+}
+
 .btn-block {
-  margin-top: 1.25rem;
+  margin-top: 5rem;
 }
 .item-data {
   display: none;
 }
-.fa-trash-alt {
-  color: crimson;
+
+/******************
+Modal Styles
+*******************/
+.modal {
+  color: #7b2e24;
+  padding: 2rem;
+  text-align: left;
 }
-/* Modal */
+
+div .modal-header {
+  padding: 1.75rem;
+}
+
+div .modal-title {
+  padding: 0.75rem 0 0 0.5rem;
+}
+
+.modal label {
+  font-size: 1.5rem;
+}
+
+div .save-btn {
+  background-color: #f55c47;
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0.25rem;
+  padding: 0.375rem 1.5rem;
+}
+
+div .save-btn:hover {
+  background-color: #dd5340;
+  color: #fff;
+}
+
+div .modal-cancel {
+  border: #feefed 1px solid;
+  color: #7b2e24;
+  font-size: 1.5rem;
+  padding: 0.375rem 1rem;
+}
+
+div .modal-cancel:hover {
+  background-color: #feefed;
+  color: #7b2e24;
+}
+
 input.highlight {
   border: red 1px solid;
 }
 .required-msg {
   color: red;
-}
-.modal {
-  text-align: left;
-}
-.btn-group-toggle {
-  text-align: center;
-}
-.interval {
-  width: 60px;
-  margin: 0 3px;
-}
-/* Footer */
-svg {
-  width: 30px;
 }
