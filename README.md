@@ -1,14 +1,30 @@
-# voyage-tasks
+#Fight-Depression
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+##Overview
+This is a web app to help potential sufferers to learn, detect
+and fight depression.
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+##Features
+* A quiz to determine if the user have the symptoms of depression.
+* Clicking the "Get result" button will take the user to another page where they will see their result in percentage.
+* There is a table to display the scale.
+* The user can log a list and notes by clicking the plus icon.
+* The blog page provides a list of blogs about depression and overcoming it.
+* By clicking the "Get more" button, it will take you to that blog.
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+## Technologies
+* HTML5
+* CSS
+* JavaScript-JQuery
+* Node JS
+* Bootstrap
 
-> Own it & Make it your Own!
+
+##Dev Dependencies
+* ESLint
+
+##Contributors
+* hertantoirawan
+* higayoshiko
+* Hirutsuki
+* BlueDragn
