@@ -1,10 +1,10 @@
-#Fight-Depression
+# Fight-Depression
 
-##Overview
+## Overview
 This is a web app to help potential sufferers to learn, detect
 and fight depression.
 
-##Features
+## Features
 * A quiz to determine if the user have the symptoms of depression.
 * Clicking the "Get result" button will take the user to another page where they will see their result in percentage.
 * There is a table to display the scale.
@@ -20,10 +20,10 @@ and fight depression.
 * Bootstrap
 
 
-##Dev Dependencies
+## Dev Dependencies
 * ESLint
 
-##Contributors
+## Contributors
 * hertantoirawan
 * higayoshiko
 * Hirutsuki
