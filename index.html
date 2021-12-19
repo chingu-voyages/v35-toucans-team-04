@@ -5,258 +5,349 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- google font Raleway -font weight: 400, 500, 600 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- google font Raleway -font weight: 400, 500, 600 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- font awesome for exit icon -->
+  <!-- font awesome for exit icon -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
   <link rel="stylesheet" href="style.css">
   <title></title>
 </head>
-
 <body>
-  <header class="header">
-    <nav class="main-nav">
-      <ul class="ul">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Reminder</a></li>
-        <li><button class="quiz-btn">Take the quiz</button></li>
-      </ul>
-    </nav>
-    <div class="main-header">
-
-    </div>
-  </header>
-
-  <main>
-    <section class="quiz">
-      <div class="icon-ctn">
-        <i class="exit-icon fas fa-times fa-2x"></i>
+  <div class="page-container">
+    <header class="header">
+      <div class="logo"><a href="#">Fight <i class="fas fa-fist-raised fist fa-2x"></i> Depression</a></div>
+      <div class="nav-blob">
+        <nav class="main-nav">
+          <ul class="ul">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="reminder.html">Reminder</a></li>
+            <li><a href="#section__quiz" class="quiz-btn">Take the quiz</a></li>
+          </ul>
+        </nav>
+        <div class="nav-blobline">&nbsp;</div>
       </div>
-      <div class="quiz-flex">
-        <div class="quiz-title-ctn">
-          <h2 class="quiz-title">Do you have depression?</h2>
-        </div>
-        <div class="quiz-ctn">
-          <h3 class="quiz-question">1. I feel little interest or pleasure in doing things.</h3>
-          <div class="quiz-choices">
-            <label for="not-at-all--1" class="quiz-choice" data-score="1">
-              <input class="input" type="radio" id="not-at-all--1" name="btn-1">
-              Not at all
-            </label>
-            <label for="several-days--1" class="quiz-choice" data-score="2">
-              <input class="input" type="radio" id="several-days--1" name="btn-1">
-              Several days
-            </label>
-            <label for="more-than-half--1" class="quiz-choice" data-score="3">
-              <input class="input" type="radio" id="more-than-half--1" name="btn-1">
-              More than half the days
-            </label>
-            <label for="nearly-everyday--1" class="quiz-choice" data-score="4">
-              <input class="input" type="radio" id="nearly-everyday--1" name="btn-1">
-              Nearly every day
-            </label>
+      <nav class="media-nav">
+        <div class="logo-2"><a href="#">Fight <i class="fas fa-fist-raised fa-2x"></i> Depression</a></div>
+        <ul class="ul-2">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="reminder.html">Reminder</a></li>
+          <li><a href="#section__quiz">Take the quiz</a></li>
+        </ul>
+      </nav>
+      <div class="main-header">
+        <div class="container grid grid-2-columns">
+          <div class="img-ctn">
+            <div class="img-blob--1">&nbsp;</div>
+            <div class="img-blobline--1">&nbsp;</div>
+            <div class="img-blob--2">&nbsp;</div>
+            <div class="img-blobline--2">&nbsp;</div>
+            <img src="image/toucan.png" class="img--toucan" alt="toucan-img">
+          </div>
+          <div class="text-ctn">
+            <h1 class="text__h1">Hello there human! <br /> I am Tuco.
+              I will help you overcome depression.
+            </h1>
+            <div class="text-blob--1">&nbsp;</div>
+            <div class="text-blob--2">&nbsp;</div>
+            <div class="text-blobline--2">&nbsp;</div>
+            <div class="text-blob--3">&nbsp;</div>
+            <div class="text-blobline--3">&nbsp;</div>
           </div>
         </div>
-        <div class="quiz-ctn">
-          <h3 class="quiz-question">2. I'm feeling down and hopeless.</h3>
-          <div class="quiz-choices">
-            <label for="not-at-all--2" class="quiz-choice" data-score="1">
-              <input class="input" type="radio" id="not-at-all--2" name="btn-2">
-              Not at all
-            </label>
-            <label for="several-days--2" class="quiz-choice" data-score="2">
-              <input class="input" type="radio" id="several-days--2" name="btn-2">
-              Several days
-            </label>
-            <label for="more-than-half--2" class="quiz-choice" data-score="3">
-              <input class="input" type="radio" id="more-than-half--2" name="btn-2">
-              More than half the days
-            </label>
-            <label for="nearly-everyday--2" class="quiz-choice" data-score="4">
-              <input class="input" type="radio" id="nearly-everyday--2" name="btn-2">
-              Nearly every day
-            </label>
-          </div>
-        </div>
-        <div class="quiz-ctn">
-          <h3 class="quiz-question">3. I have trouble falling asleep or I sleep too much.</h3>
-          <div class="quiz-choices">
-            <label for="not-at-all--3" class="quiz-choice" data-score="1">
-              <input class="input" type="radio" id="not-at-all--3" name="btn-3">
-              Not at all
-            </label>
-            <label for="several-days--3" class="quiz-choice" data-score="2">
-              <input class="input" type="radio" id="several-days--3" name="btn-3">
-              Several days
-            </label>
-            <label for="more-than-half--3" class="quiz-choice" data-score="3">
-              <input class="input" type="radio" id="more-than-half--3" name="btn-3">
-              More than half the days
-            </label>
-            <label for="nearly-everyday--3" class="quiz-choice" data-score="4">
-              <input class="input" type="radio" id="nearly-everyday--3" name="btn-3">
-              Nearly every day
-            </label>
-          </div>
-        </div>
-        <div class="quiz-ctn">
-          <h3 class="quiz-question">4. I always feel tired or no energy.</h3>
-          <div class="quiz-choices">
-            <label for="not-at-all--4" class="quiz-choice" data-score="1">
-              <input class="input" type="radio" id="not-at-all--4" name="btn-4">
-              Not at all
-            </label>
-            <label for="several-days--4" class="quiz-choice" data-score="2">
-              <input class="input" type="radio" id="several-days--4" name="btn-4">
-              Several days
-            </label>
-            <label for="more-than-half--4" class="quiz-choice" data-score="3">
-              <input class="input" type="radio" id="more-than-half--4" name="btn-4">
-              More than half the days
-            </label>
-            <label for="nearly-everyday--4" class="quiz-choice" data-score="4">
-              <input class="input" type="radio" id="nearly-everyday--4" name="btn-4">
-              Nearly every day
-            </label>
-          </div>
-        </div>
-        <div class="quiz-ctn">
-          <h3 class="quiz-question">5. I don't have appetite or I tend to overeat.</h3>
-          <div class="quiz-choices">
-            <label for="not-at-all--5" class="quiz-choice" data-score="1">
-              <input class="input" type="radio" id="not-at-all--5" name="btn-5">
-              Not at all
-            </label>
-            <label for="several-days--5" class="quiz-choice" data-score="2">
-              <input class="input" type="radio" id="several-days--5" name="btn-5">
-              Several days
-            </label>
-            <label for="more-than-half--5" class="quiz-choice" data-score="3">
-              <input class="input" type="radio" id="more-than-half--5" name="btn-5">
-              More than half the days
-            </label>
-            <label for="nearly-everyday--5" class="quiz-choice" data-score="4">
-              <input class="input" type="radio" id="nearly-everyday--5" name="btn-5">
-              Nearly every day
-            </label>
-          </div>
-        </div>
-        <div class="quiz-ctn">
-          <h3 class="quiz-question">6. I feel bad about myself, feeling like a failure and have let everyone down.</h3>
-          <div class="quiz-choices">
-            <label for="not-at-all--6" class="quiz-choice" data-score="1">
-              <input class="input" type="radio" id="not-at-all--6" name="btn-6">
-              Not at all
-            </label>
-            <label for="several-days--6" class="quiz-choice" data-score="2">
-              <input class="input" type="radio" id="several-days--6" name="btn-6">
-              Several days</label>
-            <label for="more-than-half--6" class="quiz-choice" data-score="3">
-              <input class="input" type="radio" id="more-than-half--6" name="btn-6">
-              More than half the days
-            </label>
-            <label for="nearly-everyday--6" class="quiz-choice" data-score="4">
-              <input class="input" type="radio" id="nearly-everyday--6" name="btn-6">
-              Nearly every day
-            </label>
-          </div>
-        </div>
-        <div class="quiz-ctn">
-          <h3 class="quiz-question">7. I have trouble concentrating.</h3>
-          <div class="quiz-choices">
-            <label for="not-at-all--7" class="quiz-choice" data-score="1">
-              <input class="input" type="radio" id="not-at-all--7" name="btn-7">
-              Not at all
-            </label>
-            <label for="several-days--7" class="quiz-choice" data-score="2">
-              <input class="input" type="radio" id="several-days--7" name="btn-7">
-              Several days</label>
-            <label for="more-than-half--7" class="quiz-choice" data-score="3">
-              <input class="input" type="radio" id="more-than-half--7" name="btn-7">
-              More than half the days
-            </label>
-            <label for="nearly-everyday--7" class="quiz-choice" data-score="4">
-              <input class="input" type="radio" id="nearly-everyday--7" name="btn-7">
-              Nearly every day
-            </label>
-          </div>
-        </div>
-        <div class="quiz-ctn">
-          <h3 class="quiz-question">8. I speak and move so slowly that other people noticed.</h3>
-          <div class="quiz-choices">
-            <label for="not-at-all--8" class="quiz-choice" data-score="1">
-              <input class="input" type="radio" id="not-at-all--8" name="btn-8">
-              Not at all
-            </label>
-            <label for="several-days--8" class="quiz-choice" data-score="2">
-              <input class="input" type="radio" id="several-days--8" name="btn-8">
-              Several days
-            </label>
-            <label for="more-than-half--8" class="quiz-choice" data-score="3">
-              <input class="input" type="radio" id="more-than-half--8" name="btn-8">
-              More than half the days
-            </label>
-            <label for="nearly-everyday--8" class="quiz-choice" data-score="4">
-              <input class="input" type="radio" id="nearly-everyday--8" name="btn-8">
-              Nearly every day
-            </label>
-          </div>
-        </div>
-        <div class="quiz-ctn">
-          <h3 class="quiz-question">9. I have thoughts that I would be better off dead, or I hurt myself.</h3>
-          <div class="quiz-choices">
-            <label for="not-at-all--9" class="quiz-choice" data-score="1">
-              <input class="input" type="radio" id="not-at-all--9" name="btn-9">
-              Not at all
-            </label>
-            <label for="several-days--9" class="quiz-choice" data-score="2">
-              <input class="input" type="radio" id="several-days--9" name="btn-9">
-              Several days
-            </label>
-            <label for="more-than-half--9" class="quiz-choice" data-score="3">
-              <input class="input" type="radio" id="more-than-half--9" name="btn-9">
-              More than half the days
-            </label>
-            <label for="nearly-everyday--9" class="quiz-choice" data-score="4">
-              <input class="input" type="radio" id="nearly-everyday--9" name="btn-9">
-              Nearly every day
-            </label>
-          </div>
-        </div>
-        <div class="quiz-ctn">
-          <h3 class="quiz-question">10. How difficult have these problems made it for me when I am at work, home, school, or with other people?</h3>
-          <div class="quiz-choices">
-            <label for="not-at-all--10" class="quiz-choice" data-score="1">
-              <input class="input" type="radio" id="not-at-all--10" name="btn-10">
-              Not at all
-            </label>
-            <label for="several-days--10" class="quiz-choice" data-score="2">
-              <input class="input" type="radio" id="several-days--10" name="btn-10">
-              Several days
-            </label>
-            <label for="more-than-half--10" class="quiz-choice" data-score="3">
-              <input class="input" type="radio" id="more-than-half--10" name="btn-10">
-              More than half the days
-            </label>
-            <label for="nearly-everyday--10" class="quiz-choice" data-score="4">
-              <input class="input" type="radio" id="nearly-everyday--10" name="btn-10">
-              Nearly every day
-            </label>
-          </div>
-        </div>
-        <form id="result-form" action="result.html">
-          <p class="result-error">&nbsp;</p>
-          <button type="submit" name="button" class="submitBtn">Get result</button>
-        </form>
       </div>
-    </section>
-  </main>
+    </header>
+
+    <main>
+      <section class="section__quiz" id="section__quiz">
+        <div class="container grid grid-2-columns">
+          <div class="quiz-text-ctn">
+            <h2 class="quiz-text__h2">Take quiz now!</h2>
+            <p class="quiz-text__p">Depression is very common and a serious illness. It affects your everyday life, the way you feel, the way you think
+              and the way you communicate with others. If you think you are suffering from depression it is better to see an expert. Please take our 2 minute
+              quiz to check if you have depression.</p>
+            <a class="quiz-btn">Take the quiz</a>
+            <div class="quiz-text--blob">&nbsp;</div>
+            <div class="quiz-text--blobline">&nbsp;</div>
+          </div>
+          <div class="quiz-img-ctn">
+            <img src="image/quiz-img.png" class="quiz-img" alt="girl">
+            <div class="quiz-img--blob">&nbsp;</div>
+            <div class="quiz-img--blobline">&nbsp;</div>
+          </div>
+        </div>
+        <div class="quiz-window">
+          <div class="icon-ctn">
+            <i class="exit-icon fas fa-times fa-2x"></i>
+          </div>
+          <div class="quiz-flex">
+            <div class="quiz-title-ctn">
+              <h2 class="quiz-title">Do you have depression?</h2>
+            </div>
+            <div class="quiz-ctn">
+              <h3 class="quiz-question">1. I feel little interest or pleasure in doing things.</h3>
+              <div class="quiz-choices">
+                <label for="not-at-all--1" class="quiz-choice" data-score="1">
+                  <input class="input" type="radio" id="not-at-all--1" name="btn-1">
+                  Not at all
+                </label>
+                <label for="several-days--1" class="quiz-choice" data-score="2">
+                  <input class="input" type="radio" id="several-days--1" name="btn-1">
+                  Several days
+                </label>
+                <label for="more-than-half--1" class="quiz-choice" data-score="3">
+                  <input class="input" type="radio" id="more-than-half--1" name="btn-1">
+                  More than half the days
+                </label>
+                <label for="nearly-everyday--1" class="quiz-choice" data-score="4">
+                  <input class="input" type="radio" id="nearly-everyday--1" name="btn-1">
+                  Nearly every day
+                </label>
+              </div>
+            </div>
+            <div class="quiz-ctn">
+              <h3 class="quiz-question">2. I'm feeling down and hopeless.</h3>
+              <div class="quiz-choices">
+                <label for="not-at-all--2" class="quiz-choice" data-score="1">
+                  <input class="input" type="radio" id="not-at-all--2" name="btn-2">
+                  Not at all
+                </label>
+                <label for="several-days--2" class="quiz-choice" data-score="2">
+                  <input class="input" type="radio" id="several-days--2" name="btn-2">
+                  Several days
+                </label>
+                <label for="more-than-half--2" class="quiz-choice" data-score="3">
+                  <input class="input" type="radio" id="more-than-half--2" name="btn-2">
+                  More than half the days
+                </label>
+                <label for="nearly-everyday--2" class="quiz-choice" data-score="4">
+                  <input class="input" type="radio" id="nearly-everyday--2" name="btn-2">
+                  Nearly every day
+                </label>
+              </div>
+            </div>
+            <div class="quiz-ctn">
+              <h3 class="quiz-question">3. I have trouble falling asleep or I sleep too much.</h3>
+              <div class="quiz-choices">
+                <label for="not-at-all--3" class="quiz-choice" data-score="1">
+                  <input class="input" type="radio" id="not-at-all--3" name="btn-3">
+                  Not at all
+                </label>
+                <label for="several-days--3" class="quiz-choice" data-score="2">
+                  <input class="input" type="radio" id="several-days--3" name="btn-3">
+                  Several days
+                </label>
+                <label for="more-than-half--3" class="quiz-choice" data-score="3">
+                  <input class="input" type="radio" id="more-than-half--3" name="btn-3">
+                  More than half the days
+                </label>
+                <label for="nearly-everyday--3" class="quiz-choice" data-score="4">
+                  <input class="input" type="radio" id="nearly-everyday--3" name="btn-3">
+                  Nearly every day
+                </label>
+              </div>
+            </div>
+            <div class="quiz-ctn">
+              <h3 class="quiz-question">4. I always feel tired or no energy.</h3>
+              <div class="quiz-choices">
+                <label for="not-at-all--4" class="quiz-choice" data-score="1">
+                  <input class="input" type="radio" id="not-at-all--4" name="btn-4">
+                  Not at all
+                </label>
+                <label for="several-days--4" class="quiz-choice" data-score="2">
+                  <input class="input" type="radio" id="several-days--4" name="btn-4">
+                  Several days
+                </label>
+                <label for="more-than-half--4" class="quiz-choice" data-score="3">
+                  <input class="input" type="radio" id="more-than-half--4" name="btn-4">
+                  More than half the days
+                </label>
+                <label for="nearly-everyday--4" class="quiz-choice" data-score="4">
+                  <input class="input" type="radio" id="nearly-everyday--4" name="btn-4">
+                  Nearly every day
+                </label>
+              </div>
+            </div>
+            <div class="quiz-ctn">
+              <h3 class="quiz-question">5. I don't have appetite or I tend to overeat.</h3>
+              <div class="quiz-choices">
+                <label for="not-at-all--5" class="quiz-choice" data-score="1">
+                  <input class="input" type="radio" id="not-at-all--5" name="btn-5">
+                  Not at all
+                </label>
+                <label for="several-days--5" class="quiz-choice" data-score="2">
+                  <input class="input" type="radio" id="several-days--5" name="btn-5">
+                  Several days
+                </label>
+                <label for="more-than-half--5" class="quiz-choice" data-score="3">
+                  <input class="input" type="radio" id="more-than-half--5" name="btn-5">
+                  More than half the days
+                </label>
+                <label for="nearly-everyday--5" class="quiz-choice" data-score="4">
+                  <input class="input" type="radio" id="nearly-everyday--5" name="btn-5">
+                  Nearly every day
+                </label>
+              </div>
+            </div>
+            <div class="quiz-ctn">
+              <h3 class="quiz-question">6. I feel bad about myself, feeling like a failure and have let everyone down.</h3>
+              <div class="quiz-choices">
+                <label for="not-at-all--6" class="quiz-choice" data-score="1">
+                  <input class="input" type="radio" id="not-at-all--6" name="btn-6">
+                  Not at all
+                </label>
+                <label for="several-days--6" class="quiz-choice" data-score="2">
+                  <input class="input" type="radio" id="several-days--6" name="btn-6">
+                  Several days</label>
+                <label for="more-than-half--6" class="quiz-choice" data-score="3">
+                  <input class="input" type="radio" id="more-than-half--6" name="btn-6">
+                  More than half the days
+                </label>
+                <label for="nearly-everyday--6" class="quiz-choice" data-score="4">
+                  <input class="input" type="radio" id="nearly-everyday--6" name="btn-6">
+                  Nearly every day
+                </label>
+              </div>
+            </div>
+            <div class="quiz-ctn">
+              <h3 class="quiz-question">7. I have trouble concentrating.</h3>
+              <div class="quiz-choices">
+                <label for="not-at-all--7" class="quiz-choice" data-score="1">
+                  <input class="input" type="radio" id="not-at-all--7" name="btn-7">
+                  Not at all
+                </label>
+                <label for="several-days--7" class="quiz-choice" data-score="2">
+                  <input class="input" type="radio" id="several-days--7" name="btn-7">
+                  Several days</label>
+                <label for="more-than-half--7" class="quiz-choice" data-score="3">
+                  <input class="input" type="radio" id="more-than-half--7" name="btn-7">
+                  More than half the days
+                </label>
+                <label for="nearly-everyday--7" class="quiz-choice" data-score="4">
+                  <input class="input" type="radio" id="nearly-everyday--7" name="btn-7">
+                  Nearly every day
+                </label>
+              </div>
+            </div>
+            <div class="quiz-ctn">
+              <h3 class="quiz-question">8. I speak and move so slowly that other people noticed.</h3>
+              <div class="quiz-choices">
+                <label for="not-at-all--8" class="quiz-choice" data-score="1">
+                  <input class="input" type="radio" id="not-at-all--8" name="btn-8">
+                  Not at all
+                </label>
+                <label for="several-days--8" class="quiz-choice" data-score="2">
+                  <input class="input" type="radio" id="several-days--8" name="btn-8">
+                  Several days
+                </label>
+                <label for="more-than-half--8" class="quiz-choice" data-score="3">
+                  <input class="input" type="radio" id="more-than-half--8" name="btn-8">
+                  More than half the days
+                </label>
+                <label for="nearly-everyday--8" class="quiz-choice" data-score="4">
+                  <input class="input" type="radio" id="nearly-everyday--8" name="btn-8">
+                  Nearly every day
+                </label>
+              </div>
+            </div>
+            <div class="quiz-ctn">
+              <h3 class="quiz-question">9. I have thoughts that I would be better off dead, or I hurt myself.</h3>
+              <div class="quiz-choices">
+                <label for="not-at-all--9" class="quiz-choice" data-score="1">
+                  <input class="input" type="radio" id="not-at-all--9" name="btn-9">
+                  Not at all
+                </label>
+                <label for="several-days--9" class="quiz-choice" data-score="2">
+                  <input class="input" type="radio" id="several-days--9" name="btn-9">
+                  Several days
+                </label>
+                <label for="more-than-half--9" class="quiz-choice" data-score="3">
+                  <input class="input" type="radio" id="more-than-half--9" name="btn-9">
+                  More than half the days
+                </label>
+                <label for="nearly-everyday--9" class="quiz-choice" data-score="4">
+                  <input class="input" type="radio" id="nearly-everyday--9" name="btn-9">
+                  Nearly every day
+                </label>
+              </div>
+            </div>
+            <div class="quiz-ctn">
+              <h3 class="quiz-question">10. How difficult have these problems made it for me when I am at work, home, school, or with other people?</h3>
+              <div class="quiz-choices">
+                <label for="not-at-all--10" class="quiz-choice" data-score="1">
+                  <input class="input" type="radio" id="not-at-all--10" name="btn-10">
+                  Not at all
+                </label>
+                <label for="several-days--10" class="quiz-choice" data-score="2">
+                  <input class="input" type="radio" id="several-days--10" name="btn-10">
+                  Several days
+                </label>
+                <label for="more-than-half--10" class="quiz-choice" data-score="3">
+                  <input class="input" type="radio" id="more-than-half--10" name="btn-10">
+                  More than half the days
+                </label>
+                <label for="nearly-everyday--10" class="quiz-choice" data-score="4">
+                  <input class="input" type="radio" id="nearly-everyday--10" name="btn-10">
+                  Nearly every day
+                </label>
+              </div>
+            </div>
+            <form id="result-form" action="result.html">
+              <p class="result-error">&nbsp;</p>
+              <button type="submit" name="button" class="submitBtn">Get result</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="about-us" id="about">
+        <div class="container grid grid-2-columns about-gap">
+          <div class="about-text-ctn about-center">
+            <p class="about-us__p">We are the team</p>
+            <h2 class="about-us__h2">Toucans-04</h2>
+          </div>
+          <div class="about-img-ctn">
+            <img src="image/about.png" class="about-img" alt="toucan">
+          </div>
+          <div class="team-ctn grid grid-4-columns about-center">
+            <div class="team">
+              <p class="team-names">Hertanto</p>
+            </div>
+            <div class="team">
+              <p class="team-names">BlueDragon</p>
+            </div>
+            <div class="team">
+              <p class="team-names">It_is_42</p>
+            </div>
+            <div class="team">
+              <p class="team-names">Yushi</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer">
+      Chingu V35
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" x="0px" y="0px">
+        <title>Artboard 23</title>
+        <g>
+          <path d="M8,42.5652V86.5c8,0,16-8,16-22v-4C24,48.5916,20.9534,41.7515,8,42.5652Z"></path>
+          <path
+            d="M8.0957,30.4414l-.0469,8.1228c.6729-.0376,1.3323-.0642,1.9571-.0642C28,38.5,28,54.4844,28,60.5v4a32.676,32.676,0,0,1-2.6643,13.4587h1.7468A25.5656,25.5656,0,0,0,48,52.75V10.5H30.8594C18.832,10.5,8.6211,19.4453,8.0957,30.4414ZM28,26.5a4,4,0,1,1,4-4A4.004,4.004,0,0,1,28,26.5Z">
+          </path>
+          <path d="M66,10.5H52v20H86a1.9988,1.9988,0,0,0,2-2C88,16.3711,78.1309,10.5,66,10.5Z"></path>
+          <path d="M52,46.5H62c10.5334,0,16.86-4.3677,17.8074-12H52Z"></path>
+        </g>
+      </svg>
+      Toucans 4
+    </footer>
+  </div>
   <script src="script.js" charset="utf-8"></script>
 </body>
 

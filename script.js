@@ -97,15 +97,17 @@ window.onload = () => {
 /*****************************************************************/
 // -------- open and close quiz when button is clicked ---------- //
 /*****************************************************************/
-let quizBtn = document.querySelector(".quiz-btn");
-let quiz = document.querySelector(".quiz");
+let quizBtn = document.querySelectorAll(".quiz-btn");
+let quiz = document.querySelector(".quiz-window");
 let icon = document.querySelector(".icon-ctn");
 
-//add click event to quiz button if not null
+//add click event to all quiz button if not null
 if (quizBtn) {
-  quizBtn.addEventListener("click", () => {
-    //open quiz window
-    quiz.classList.add("open-quiz");
+  quizBtn.forEach(item => {
+    item.addEventListener("click", () => {
+      //open quiz window
+      quiz.classList.add("open-quiz");
+    });
   });
 };
 //add click event to exit icon if not null
